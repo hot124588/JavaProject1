@@ -1,0 +1,12 @@
+CREATE TABLE password_reset (
+	reset_id INT PRIMARY KEY AUTO_INCREMENT COMMENT '重置ID',
+	user_id INT NOT NULL COMMENT '用户ID',
+	email VARCHAR(100) COMMENT '邮箱',
+	phone VARCHAR(20) COMMENT '手机号码',
+	reset_token VARCHAR(255) NOT NULL COMMENT '重置令牌',
+	token_expiration DATETIME NOT NULL COMMENT '令牌过期时间',
+	create_by INT COMMENT '创建人',
+	create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	update_by INT COMMENT '修改人',
+	update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间'
+) COMMENT '密码重置信息表';

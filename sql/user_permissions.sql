@@ -1,0 +1,10 @@
+CREATE TABLE user_permissions (
+	permission_id INT PRIMARY KEY AUTO_INCREMENT COMMENT '权限ID',
+	user_id INT NOT NULL COMMENT '用户ID',
+	role VARCHAR(50) NOT NULL COMMENT '角色',
+	permissions VARCHAR(255) COMMENT '权限列表',
+	create_by INT COMMENT '创建人',
+	create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	update_by INT COMMENT '修改人',
+	update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间'
+) COMMENT '用户权限表';
